@@ -12,6 +12,9 @@
             id="pickup"
             placeholder="city, airport, station, region, district ..."
           />
+          <ul>
+            <li v-for="(locations, index) in data" :key=index><a href="#">{{locations.country}}</a></li>
+          </ul>
         </form>
       </div>
     </div>
@@ -19,13 +22,23 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "Homepage",
-  props: {
-    msg: String,
+  data() {
+    return {
+      data: [],
+      //error: false,
+    };
+  },
+  mounted() {
+    axios.post("https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=10&solrTerm=manchester")
+    .then(res => {
+      this.data = res.data.results.docs;
+    });
   },
 };
 </script>
 <style lang="scss">
-@import url('./Homepage.scss');
+@import url("./Homepage.scss");
 </style>
