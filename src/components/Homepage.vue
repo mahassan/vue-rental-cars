@@ -10,10 +10,38 @@
             type="text"
             name=""
             id="pickup"
+            v-model="searchTerm"
+            @change="filteredLocations()"
             placeholder="city, airport, station, region, district ..."
           />
-          <ul>
-            <li v-for="(locations, index) in data" :key=index><a href="#">{{locations.country}}</a></li>
+          <ul class="auto-gen-list">
+            <li v-for="(locations, index) in data" :key="index">
+              <a href="#">
+                <div
+                  :class="{
+                    airport: locations.placeType == 'A',
+                    city: locations.placeType == 'C',
+                    train: locations.placeType == 'T',
+                  }"
+                >
+                  {{ locations.bookingId | stripId }}
+                </div>
+
+                <div class="location">
+                  {{ locations.name }}
+                  {{ locations.iata ? `(${locations.iata})` : "" }}
+                  <br />
+                  <span class="geographic">
+                    {{ locations.region ? locations.region : "" }}
+                    {{ locations.country ? locations.country : "" }}
+                  </span>
+                </div>
+
+                <div class="popular" v-show="locations.isPopular">
+                  <span> popular </span>
+                </div>
+              </a>
+            </li>
           </ul>
         </form>
       </div>
@@ -28,14 +56,25 @@ export default {
   data() {
     return {
       data: [],
+      searchTerm: "",
       //error: false,
     };
   },
   mounted() {
-    axios.post("https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=10&solrTerm=manchester")
-    .then(res => {
-      this.data = res.data.results.docs;
-    });
+    axios
+      .post(
+        `https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=10&solrTerm=manchester`
+      )
+      .then((res) => {
+        this.data = res.data.results.docs;
+      });
+  },
+  computed: {
+    filteredLocations() {
+      return this.data.filter((posts) => {
+        return posts.city.includes(this.searchTerm);
+      });
+    },
   },
 };
 </script>

@@ -16,21 +16,15 @@ export default {
 </script>
 
 <style lang="scss">
-*{
+@import '~normalize.css';
+*,ul,li{
   margin: 0;
   padding: 0;
 }
 html{
   box-sizing: border-box;
 }
-li{
-  list-style: none;
-    color: #989898;
-    padding: 0;
-    cursor: pointer;
-    border-radius: 2px;
-    border-bottom: 1px solid #eaeaea;
-}
+
 a:link,
 a:visited,
 a:hover,
@@ -42,6 +36,7 @@ a:active{
     white-space: nowrap;
     overflow: hidden;
     border-radius: 0;
+    color: #fff;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

@@ -1,3 +1,48 @@
+  .airport{
+    background-color: #f2817f!important;
+    min-width: 50px;
+    margin: 2px 10px 0 0;
+    padding: 3px 5px;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bold;
+    align-self: center;
+  }
+  .popular{
+    background-color: #ffffff;
+    border: 1px solid #00874d;
+    color: #00874d;
+    float: right;
+    margin-right: 0;
+    margin-left: 10px;
+    margin-top: 5px;
+    align-self: center;
+    min-width: 50px;
+    margin: 2px 10px 0 0;
+    padding: 3px 5px;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .city{
+    background-color: #6eb8fa;
+    min-width: 50px;
+    margin: 2px 10px 0 0;
+    padding: 3px 5px;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bold;
+    align-self: center;
+  }
+  .train{
+    background-color: #9d9dbb;
+    min-width: 50px;
+    margin: 2px 10px 0 0;
+    padding: 3px 5px;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bold
+  }
 .container {
     padding: calc(4px * 8) !important;
     background: #1670b7;
@@ -22,4 +67,31 @@
   input[type='text']{
     padding: 8px;
     width: 100%;
+  }
+  ul.auto-gen-list{
+    list-style: none;
+    width:100%;
+  }
+  li{
+    border-bottom: 1px solid #eaeaea;
+    background: #fff;
+  a{
+    div{
+      border: 1px solid red;
+    }
+  }
+}
+  a:hover{
+    background-color: #dff6ff;
+  }
+  .location{
+    color: black;
+    flex-grow: 1;
+    text-align: left;
+  }
+  .geographic{
+    font-weight: 400;
+    color: gray;
+    display: block;
+    font-size: 85%;
   }
