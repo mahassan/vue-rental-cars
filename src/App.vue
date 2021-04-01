@@ -17,6 +17,7 @@ export default {
 
 <style lang="scss">
 @import '~normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Ubuntu:wght@300;400;500&display=swap');
 *,ul,li{
   margin: 0;
   padding: 0;
@@ -24,6 +25,7 @@ export default {
 html{
   box-sizing: border-box;
 }
+
 
 a:link,
 a:visited,
@@ -39,11 +41,6 @@ a:active{
     color: #fff;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: 'Ubuntu', sans-serif;
 }
 </style>

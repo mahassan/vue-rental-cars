@@ -4,18 +4,21 @@
       <div class="card">
         <h1>Where are you going?</h1>
         <form>
-          <label for="pickup">Pick-up Location</label>
-          <input
-            aria-labelledby="pick up location"
-            type="text"
-            name=""
-            id="pickup"
-            v-model.trim="searchTerm"
-            @change="filteredLocations()"
-            placeholder="city, airport, station, region, district ..."
-          />
+          <div class="form-control">
+            <label for="pickup">Pick-up Location</label>
+            <input
+              aria-labelledby="pick up location"
+              type="text"
+              name=""
+              id="pickup"
+              @keyup="refreshSearch"
+              v-model.trim="searchTerm"
+              placeholder="city, airport, station, region, district ..."
+            />
+            <img :class="{loader: isLoading}" />
+          </div>
           <ul class="auto-gen-list">
-            <li v-for="(locations, index) in data" :key="index">
+            <li v-for="(locations, index) in filteredLocations" :key="index">
               <a href="#">
                 <div
                   :class="{
@@ -57,22 +60,33 @@ export default {
     return {
       data: [],
       searchTerm: "",
-      //error: false,
+      isLoading: true,
     };
   },
-  mounted() {
-    axios
-      .post(
-        `https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=10&solrTerm=manchester`
-      )
-      .then((res) => {
-        this.data = res.data.results.docs;
-      });
+  methods: {
+    refreshSearch() {
+      if (this.searchTerm !== "" && this.searchTerm.length >= 2) {
+        this.isLoading = true;
+        axios
+          .get(
+            `https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=10&solrTerm=${this.searchTerm}`
+          )
+          .then((res) => {
+            this.isLoading = false;
+            this.data = res.data.results.docs;
+          })
+          .catch((err) => {
+            console.log("Error is " + err);
+          });
+      } else {
+        this.data = [];
+      }
+    },
   },
   computed: {
     filteredLocations() {
       return this.data.filter((posts) => {
-        return posts.city.includes(this.searchTerm);
+        return posts;
       });
     },
   },
