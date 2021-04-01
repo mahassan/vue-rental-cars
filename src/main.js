@@ -4,7 +4,9 @@ import App from "./App.vue";
 Vue.filter("stripId", val => {
   const convertToArray =  val.split("-");
   convertToArray.pop()
-  return convertToArray.toString();
+  const newVal = convertToArray.toString();
+  const firstLetter = newVal.substring(0, 1);
+  return `${firstLetter.toUpperCase()}${newVal.substring(1)}`
 })
 Vue.config.productionTip = false;
 
