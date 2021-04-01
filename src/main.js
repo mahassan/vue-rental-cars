@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 
 Vue.filter("stripId", val => {
+  //split the word
   const convertToArray =  val.split("-");
   convertToArray.pop()
   const newVal = convertToArray.toString();

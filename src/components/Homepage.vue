@@ -10,7 +10,7 @@
             type="text"
             name=""
             id="pickup"
-            v-model="searchTerm"
+            v-model.trim="searchTerm"
             @change="filteredLocations()"
             placeholder="city, airport, station, region, district ..."
           />
