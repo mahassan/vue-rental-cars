@@ -3,7 +3,7 @@
     <div class="searchBox">
       <div class="card">
         <h1>Where are you going?</h1>
-        <form>
+        <form @submit.prevent>
           <div class="form-control">
             <label for="pickup">Pick-up Location</label>
             <input
