@@ -1,6 +1,8 @@
-# vue-rental-cars
+# vue-rental-cars (cool name eh? ;) )
 
-## Project setup
+(https://vue-my-rental-cars.netlify.app/)[Demo link]
+
+## To run project locally
 ```
 npm install
 ```
@@ -10,15 +12,9 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
+### If you want to Compile and minify for production
 ```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#Enjoy 
