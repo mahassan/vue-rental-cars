@@ -1,6 +1,12 @@
 # vue-rental-cars (cool name eh? ;) )
 
-(https://vue-my-rental-cars.netlify.app/)[Demo link]
+## What is the project? 
+Objective: Create a Pick-up Location input box and apply the styling as per​ ​www.rentalcars.com homepage.
+
+## What platform did you use?
+I used VueJS, I can do same in ReactJS as well (WIP).
+
+[Demo link]((https://vue-my-rental-cars.netlify.app/)
 
 ## To run project locally
 ```
@@ -17,4 +23,4 @@ npm run serve
 npm run build
 ```
 
-#Enjoy 
+# Enjoy 
