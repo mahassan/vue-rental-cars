@@ -1,6 +1,14 @@
-# vue-rental-cars
+# vue-rental-cars (cool name eh? ;) )
 
-## Project setup
+## What is the project? 
+Objective: Create a Pick-up Location input box and apply the styling as per​ ​www.rentalcars.com homepage.
+
+## What framework did you use?
+I used VueJS.
+
+[Demo link]((https://vue-my-rental-cars.netlify.app/)
+
+## To run project locally
 ```
 npm install
 ```
@@ -10,15 +18,9 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
+### If you want to Compile and minify for production
 ```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Enjoy 
