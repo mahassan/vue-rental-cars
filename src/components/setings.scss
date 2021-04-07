@@ -1,0 +1,13 @@
+$city:  #6eb8fa;
+$airpot: #f2817f;
+$popular-border:  #00874d;
+$train: #9d9dbb;
+@mixin tags{
+    min-width: 50px;
+    margin: 2px 10px 0 0;
+    padding: 3px 5px;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bold;
+    align-self: center;
+}
