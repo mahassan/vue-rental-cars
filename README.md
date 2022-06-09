@@ -9,9 +9,10 @@ I used VueJS.
 [Demo link]((https://vue-my-rental-cars.netlify.app/)
 
 ## To run project locally
-```
-npm install
-```
+Step 1 : Clone the repo to your desired location `git clone https://github.com/mahassan/vue-rental-cars.git`.
+Step 2 : `cd` into the directory just clone.
+Step 3: `npm install` to install dependency.
+Step 4: `npm run serve` to start the application.
 
 ### Compiles and hot-reloads for development
 ```
